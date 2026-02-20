@@ -1,3 +1,16 @@
+:root {
+    --text-color: #ffffff;
+    --panel-bg: rgba(0, 0, 0, 0.45);
+    --panel-border: rgba(255, 255, 255, 0.2);
+    --button-bg: rgba(255, 255, 255, 0.14);
+    --button-bg-hover: rgba(255, 255, 255, 0.22);
+    --button-border: rgba(255, 255, 255, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-image: url("signupback1.jpg");
     background-position: center;
@@ -5,6 +18,8 @@ body {
     background-size: cover;
     background-attachment: fixed;
     margin: 0;
+    color: var(--text-color);
+    font-family: "Inter", "Segoe UI", sans-serif;
 }
 
 #clock-container {
@@ -15,15 +30,62 @@ body {
     padding: 1rem;
 }
 
-#clock {
-    color: white;
-    font-family: monospace;
-    font-size: clamp(2.5rem, 10vw, 6.5rem);
-    font-weight: bold;
+#clock-card {
+    backdrop-filter: blur(8px);
+    background-color: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 16px;
+    width: min(100%, 920px);
+    padding: 1rem 1.25rem;
     text-align: center;
-    backdrop-filter: blur(5px);
-    background-color: hsla(0, 0%, 100%, 0.1);
-    border-radius: 12px;
-    padding: 0.5rem 1rem;
-    width: min(100%, 900px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+#date {
+    margin: 0;
+    font-size: clamp(1rem, 3.5vw, 1.45rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+#clock {
+    margin: 0.4rem 0;
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: clamp(2.2rem, 9.5vw, 6rem);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+#timezone {
+    margin: 0;
+    opacity: 0.95;
+    font-size: clamp(0.95rem, 2.8vw, 1.2rem);
+}
+
+#format-toggle {
+    margin-top: 1rem;
+    color: var(--text-color);
+    background: var(--button-bg);
+    border: 1px solid var(--button-border);
+    border-radius: 10px;
+    padding: 0.55rem 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#format-toggle:hover,
+#format-toggle:focus-visible {
+    background: var(--button-bg-hover);
+}
+
+#format-toggle:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+    #clock-card {
+        padding: 0.85rem;
+    }
 }

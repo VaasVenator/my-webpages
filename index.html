@@ -8,7 +8,12 @@
 </head>
 <body>
     <main id="clock-container">
-        <div id="clock" aria-live="polite">00:00:00 AM</div>
+        <section id="clock-card" aria-live="polite" aria-label="Current local date and time">
+            <p id="date">Loading date...</p>
+            <p id="clock">00:00:00 AM</p>
+            <p id="timezone">Local time</p>
+            <button id="format-toggle" type="button" aria-pressed="false">Use 24-hour format</button>
+        </section>
     </main>
     <script src="index.js"></script>
 </body>
