@@ -34,7 +34,7 @@ body {
     backdrop-filter: blur(8px);
     background-color: var(--panel-bg);
     border: 1px solid var(--panel-border);
-    border-radius: 16px;
+    border-radius: 20px;
     width: min(100%, 920px);
     padding: 1rem 1.25rem;
     text-align: center;
